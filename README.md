@@ -217,6 +217,13 @@ curl -X POST http://localhost:3001/api/todos \
 src/
   app/
     api/
+    component/
+      ToDoListTable.tsx            # UI 容器（串 controller + view）
+      BasicDateTimePicker.tsx      # 日期時間 picker（MUI X）
+      todos/                       # Todo UI（MVC 分層）
+        model/                     # types/constants/formatters
+        controller/                # useTodosController（狀態與流程）
+        view/                      # ToDoListTableView（純 UI）
       todos/
         route.ts           # GET (列表), POST (新增)
         [id]/
@@ -228,6 +235,8 @@ src/
     docs/
       page.tsx             # Swagger UI 頁面
   lib/
+    docs-static/
+      page.tsx              # Static Docs 頁面
     types.ts              # TypeScript 型別定義
     data.ts               # 記憶體資料儲存
     validations.ts        # Zod 驗證 schemas
